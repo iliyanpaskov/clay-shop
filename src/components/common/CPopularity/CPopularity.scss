@@ -1,0 +1,12 @@
+@use '../../../globalStyles/' as gs;
+
+.show__popularity{
+    background: gs.$popularity-background;
+    font-size: 0.875rem;
+    text-align: center;
+    text-transform: capitalize;
+    border: none;
+    font-weight: 600;
+    padding:0.45rem 1.53rem;
+    border-radius: 0.45rem;
+}

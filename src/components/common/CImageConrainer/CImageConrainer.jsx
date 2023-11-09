@@ -1,7 +1,7 @@
 import './CImageConrainer.scss';
 
 export const CImageConrainer = ({
-    image
+    image,
 }) => {
   return (
     <div className='image__container'>

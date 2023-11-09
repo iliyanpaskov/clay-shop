@@ -13,6 +13,9 @@
     &__information {
         width: 50%;
         height: 100%;
+    }
+
+    &__images__wrapper {
         @include gs.flex(column, space-between, center);
     }
 
@@ -22,5 +25,15 @@
         height: 5.5rem;
         @include gs.flex(row, space-between, center);
         padding-right: 2.5rem;
+    }
+
+    &__information {
+        @include gs.flex(column, space-between, flex-start);
+        padding-left: 2.5rem;
+
+        &__popularity{
+            
+        }
+
     }
 }
