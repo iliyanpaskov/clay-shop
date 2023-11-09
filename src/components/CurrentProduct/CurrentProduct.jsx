@@ -2,6 +2,7 @@ import { MainImage } from '../MainImage/MainImage';
 import { CHeart } from '../common/CHeart/CHeart';
 import { CImageConrainer } from '../common/CImageConrainer/CImageConrainer';
 import { CPopularity } from '../common/CPopularity/CPopularity';
+import { CReviews } from '../common/CReviews/CReviews';
 import { CTransparentEffect } from '../common/CTransparentEffect/CTransparentEffect';
 import './CurrentProduct.scss';
 
@@ -28,6 +29,8 @@ export const CurrentProduct = ({
                     <CPopularity popularity={product.popularity}/>
                     <CHeart/>
                 </section>
+                <h1 className='current__product__information__model'>{product.model}</h1>
+                <CReviews reviews={product.reviews}/>
             </article>
         </section>
     )

@@ -1,0 +1,15 @@
+@use '../../../globalStyles/' as gs;
+
+.current__product__information__reviews {
+    @include gs.flex(row, center, center);
+
+    &>div>svg {
+        margin-right: 0.7rem;
+        font-size: 1.5rem;
+        color: gs.$pink;
+    }
+
+    &>span{
+        margin-left: 0.6rem;
+    }
+}

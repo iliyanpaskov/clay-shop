@@ -14,11 +14,11 @@
         width: 50%;
         height: 100%;
     }
-
+    
     &__images__wrapper {
         @include gs.flex(column, space-between, center);
     }
-
+    
     &__all__images {
         position: relative;
         width: 32rem;
@@ -26,15 +26,24 @@
         @include gs.flex(row, space-between, center);
         padding-right: 2.5rem;
     }
-
+    
     &__information {
+        position: relative;
+        // min-height: 41rem;
         @include gs.flex(column, space-between, flex-start);
         padding-left: 2.5rem;
-
+        
         &__popularity{
             width: 100%;
             @include gs.flex(row,space-between,center);
         }
-
+        
+        &__model{
+            max-width: 21.75rem;
+            text-transform: capitalize;
+            font-size: 2.85rem;
+            margin: 1rem 0;
+            font-weight: 400;
+        }
     }
 }
