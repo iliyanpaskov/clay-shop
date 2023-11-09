@@ -1,4 +1,5 @@
 import { MainImage } from '../MainImage/MainImage';
+import { CHeart } from '../common/CHeart/CHeart';
 import { CImageConrainer } from '../common/CImageConrainer/CImageConrainer';
 import { CPopularity } from '../common/CPopularity/CPopularity';
 import { CTransparentEffect } from '../common/CTransparentEffect/CTransparentEffect';
@@ -25,6 +26,7 @@ export const CurrentProduct = ({
             <article className='current__product__information'>
                 <section className='current__product__information__popularity' >
                     <CPopularity popularity={product.popularity}/>
+                    <CHeart/>
                 </section>
             </article>
         </section>
