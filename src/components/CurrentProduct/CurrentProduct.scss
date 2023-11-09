@@ -1,0 +1,26 @@
+@use '../../globalStyles/' as gs;
+
+.current__product {
+    width: 71.25rem;
+    min-height: 41.25rem;
+    background: gs.$white;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    @include gs.flex(row, space-between, none);
+    padding: 1.8125rem;
+
+    &__images__wrapper,
+    &__information {
+        width: 50%;
+        height: 100%;
+        @include gs.flex(column, space-between, center);
+    }
+
+    &__all__images {
+        position: relative;
+        width: 32rem;
+        height: 5.5rem;
+        @include gs.flex(row, space-between, center);
+        padding-right: 2.5rem;
+    }
+}

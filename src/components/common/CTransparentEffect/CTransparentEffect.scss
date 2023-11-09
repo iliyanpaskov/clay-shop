@@ -1,0 +1,11 @@
+.transparent__end{
+    width: 4.5rem;
+    height: 120%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: linear-gradient(90deg, #ffffff00 0%, #ffffff47 17%, #ffffff7c 36%, #ffffff9d 60%, #ffffff 98%);
+    transition: 0.5s;
+
+}

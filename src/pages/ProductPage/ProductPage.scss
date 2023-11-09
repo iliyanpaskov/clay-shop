@@ -1,1 +1,12 @@
 @use '../../globalStyles/' as gs;
+
+.product__page{
+    width: 100%;
+    background: gs.$gray-background-color;
+    padding: 3.875rem;
+
+    &__current__product{
+        @include gs.flex(column,center,center);
+    }
+
+}
