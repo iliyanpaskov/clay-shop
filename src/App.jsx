@@ -1,11 +1,15 @@
-import './App.css'
 import { Header } from './components/Header/Header';
+import { ProductPage } from './pages/ProductPage/ProductPage';
+import './App.css'
 
 function App() {
 
 	return (
 		<>
-			<Header/>
+			<Header />
+			<main>
+				<ProductPage />
+			</main>
 		</>
 	)
 }
