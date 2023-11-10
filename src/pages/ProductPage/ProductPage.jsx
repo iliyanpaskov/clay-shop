@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import './ProductPage.scss';
 import { getSingleProduct } from '../../services/productsServices/productsServices';
 import { CurrentProduct } from '../../components/CurrentProduct/CurrentProduct';
+import './ProductPage.scss';
+import { CurrentProductReview } from '../../components/CurrentProductReview/CurrentProductReview';
 
 export const ProductPage = () => {
 
@@ -21,7 +22,9 @@ export const ProductPage = () => {
             <article className='product__page__current__product'>
                 <CurrentProduct product={currentProduct}/>
             </article>
-            <article className='product__page__review'></article>
+            <article className='product__page__review'>
+                <CurrentProductReview />
+            </article>
         </section>
     )
 }

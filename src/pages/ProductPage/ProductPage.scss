@@ -4,9 +4,13 @@
     width: 100%;
     background: gs.$gray-background-color;
     padding: 3.875rem;
-
+    
     &__current__product{
-        @include gs.flex(column,center,center);
+        @include gs.flex(column,center,center); 
     }
-
+    
+    &__review{
+        @include gs.flex(column,center,center); 
+        margin-top: 2.35rem;
+    }
 }

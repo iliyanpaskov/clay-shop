@@ -23,7 +23,7 @@ export const CReviews = ({
                                 stars.map(x => x === 0.5 ? <BsStarHalf key={Math.random()} /> : null)
                             }
                             {
-                                stars.map(x => x === 0 ? <BsStar key={Math.random()} className='gra' /> : null)
+                                stars.map(x => x === 0 ? <BsStar key={Math.random()} /> : null)
                             }
                         </>
                         : null
