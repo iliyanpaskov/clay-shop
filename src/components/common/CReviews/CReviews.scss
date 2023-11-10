@@ -2,7 +2,7 @@
 
 .current__product__information__reviews {
     @include gs.flex(row, center, center);
-
+    margin-bottom: 1rem;
     &>div>svg {
         margin-right: 0.7rem;
         font-size: 1.5rem;

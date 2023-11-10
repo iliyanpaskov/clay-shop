@@ -1,4 +1,5 @@
 import { MainImage } from '../MainImage/MainImage';
+import { OrderProduct } from '../OrderProduct/OrderProduct';
 import { CHeart } from '../common/CHeart/CHeart';
 import { CImageConrainer } from '../common/CImageConrainer/CImageConrainer';
 import { CPopularity } from '../common/CPopularity/CPopularity';
@@ -14,11 +15,11 @@ export const CurrentProduct = ({
     return (
         <section className='current__product'>
             <article className='current__product__images__wrapper'>
-                <MainImage product={product}/>
+                <MainImage product={product} />
                 <div className='current__product__all__images'>
                     {
                         product.images
-                            ? product.images.map((x,index) => <CImageConrainer key={index} image={x}/>)
+                            ? product.images.map((x, index) => <CImageConrainer key={index} image={x} />)
                             : null
                     }
                     <CTransparentEffect />
@@ -27,12 +28,13 @@ export const CurrentProduct = ({
 
             <article className='current__product__information'>
                 <section className='current__product__information__popularity' >
-                    <CPopularity popularity={product.popularity}/>
-                    <CHeart/>
+                    <CPopularity popularity={product.popularity} />
+                    <CHeart />
                 </section>
                 <h1 className='current__product__information__model'>{product.model}</h1>
-                <CReviews reviews={product.reviews}/>
-                <CProductInformation product={product}/>
+                <CReviews reviews={product.reviews} />
+                <CProductInformation product={product} />
+                <OrderProduct product={product}/>
             </article>
         </section>
     )
