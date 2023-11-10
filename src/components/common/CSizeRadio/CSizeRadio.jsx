@@ -1,13 +1,14 @@
 import React from 'react';
-import './CSize.scss';
+import './CSizeRadio.scss';
 
-export const CSize = ({
-    size
+export const CSizeRadio = ({
+    size,
+    handler
 }) => {
     return (
         <div className='size__radio'>
             <label >
-                <input type="radio" id={size} name="size" value={size} />
+                <input type="radio" id={size} name="size" value={size} onClick={handler} />
                 <span className='checkmark'>{size}</span>
                 <p >{size}</p>
             </label>

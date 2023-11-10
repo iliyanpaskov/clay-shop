@@ -1,9 +1,24 @@
-import { CSize } from '../common/CSize/CSize';
+import { useState } from 'react';
+import { CColorRadio } from '../common/CColorRadio/CColorRadio';
+import { CSizeRadio } from '../common/CSizeRadio/CSizeRadio';
 import './OrderProduct.scss';
 
 export const OrderProduct = ({
     product
 }) => {
+
+    const [size, setSize] = useState('');
+    const [color, setColor] = useState('');
+    const [price, setPrice] = useState(0);
+
+    const sizeHandler = (e) => {
+        setSize(e.currentTarget.value);
+    }
+    const colorHandler = (e) => {
+        setColor(e.currentTarget.value);
+    }
+  
+
     return (
         <section className='order__product'>
             <form className='order__product__form'>
@@ -16,18 +31,27 @@ export const OrderProduct = ({
                         <section className='order__product__form__sizes__values'>
                             {
                                 product.size
-                                    ? product.size.map(x => <CSize size={x} key={x} />)
+                                    ? product.size.map(x => <CSizeRadio size={x} key={x} handler={sizeHandler} />)
                                     : null
                             }
                         </section>
                     </article>
                     <article className='order__product__form__color'>
-
+                        <p>color</p>
+                        <div>
+                            {
+                                product.colors
+                                    ? product.colors.map(x => <CColorRadio key={x} color={x} handler={colorHandler}/>)
+                                    : null
+                            }
+                        </div>
                     </article>
                 </div>
-                <div >
 
+                <div >
+                            
                 </div>
+
             </form>
         </section>
     )
