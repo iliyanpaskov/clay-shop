@@ -3,6 +3,7 @@ import { CColorRadio } from '../common/CColorRadio/CColorRadio';
 import { CSizeRadio } from '../common/CSizeRadio/CSizeRadio';
 import './OrderProduct.scss';
 import { CPrice } from '../common/CPrice/CPrice';
+import { CFormButton } from '../common/CFormButton/CFormButton';
 
 export const OrderProduct = ({
     product
@@ -25,7 +26,7 @@ export const OrderProduct = ({
     return (
         <section className='order__product'>
             <form className='order__product__form'>
-                <div >
+                <div className='order__product__form__props'>
                     <article className='order__product__form__sizes'>
                         <section className='order__product__form__sizes__text'>
                             <span>size</span>
@@ -52,7 +53,9 @@ export const OrderProduct = ({
                 </div>
 
                 <div className='order__product__form__price__buttons'>
-                      <CPrice price={price} initialPrice={product.price}/>      
+                      <CPrice price={price} initialPrice={product.price}/>
+                      <CFormButton title={"Shop Now"}/>      
+                      <CFormButton title={"Add to cart"}/>      
                 </div>
 
             </form>
