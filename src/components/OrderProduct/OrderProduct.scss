@@ -54,6 +54,10 @@
             }
         }
 
+
+        &__price__buttons {
+            @include gs.flex(row,space-between,center);
+        }
     }
 
 

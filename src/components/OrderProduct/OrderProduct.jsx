@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { CColorRadio } from '../common/CColorRadio/CColorRadio';
 import { CSizeRadio } from '../common/CSizeRadio/CSizeRadio';
 import './OrderProduct.scss';
+import { CPrice } from '../common/CPrice/CPrice';
 
 export const OrderProduct = ({
     product
@@ -9,13 +10,15 @@ export const OrderProduct = ({
 
     const [size, setSize] = useState('');
     const [color, setColor] = useState('');
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState(product.price);
+    
 
     const sizeHandler = (e) => {
         setSize(e.currentTarget.value);
     }
     const colorHandler = (e) => {
         setColor(e.currentTarget.value);
+
     }
   
 
@@ -48,8 +51,8 @@ export const OrderProduct = ({
                     </article>
                 </div>
 
-                <div >
-                            
+                <div className='order__product__form__price__buttons'>
+                      <CPrice price={price} initialPrice={product.price}/>      
                 </div>
 
             </form>
