@@ -23,7 +23,7 @@ export const Header = () => {
                 </article>
             </section>
 
-            <section className='header__bottom'>
+            <nav className='header__nav'>
                 <ul>
                     <li>
                         <NavLink to='#'>home</NavLink>
@@ -38,7 +38,7 @@ export const Header = () => {
                         <NavLink to='#'>contact</NavLink>
                     </li>
                 </ul>
-            </section>
+            </nav>
 
         </header>
     )

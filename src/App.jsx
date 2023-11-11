@@ -1,6 +1,7 @@
 import { Header } from './components/Header/Header';
 import { ProductPage } from './pages/ProductPage/ProductPage';
-import './App.css'
+import { Footer } from './components/Footer/Footer';
+import './App.css';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
 			<main>
 				<ProductPage />
 			</main>
+			<Footer />
 		</>
 	)
 }

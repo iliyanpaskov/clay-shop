@@ -4,3 +4,12 @@
     justify-content: $content;
     align-items: $items
 }
+
+@mixin grid($columns, $gap, $justify-items) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+    align-items: center;
+    justify-content: center;
+    justify-items: $justify-items;
+}
