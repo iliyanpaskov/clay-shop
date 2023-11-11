@@ -1,0 +1,12 @@
+@use '../../../globalStyles/' as gs;
+
+.comment__stars {
+    @include gs.flex(row, none, center);
+    margin-top: 0.3rem;
+
+    &>div>svg {
+        margin-right: 0.7rem;
+        font-size: 1.5rem;
+        color: gs.$pink;
+    }
+}

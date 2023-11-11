@@ -23,7 +23,7 @@ export const ProductPage = () => {
                 <CurrentProduct product={currentProduct}/>
             </article>
             <article className='product__page__review'>
-                <CurrentProductReview />
+                <CurrentProductReview comments={currentProduct.reviews}/>
             </article>
         </section>
     )
