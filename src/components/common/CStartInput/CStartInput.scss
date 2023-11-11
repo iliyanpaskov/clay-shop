@@ -15,5 +15,8 @@
             transition: 0.5s;
 
         }
+        &>label{
+            display:none;
+        }
     }
 }

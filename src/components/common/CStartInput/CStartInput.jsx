@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import {BsStarFill} from 'react-icons/bs';
+import { useState } from 'react';
+import { BsStarFill } from 'react-icons/bs';
 import './CStartInput.scss';
 
 export const CStartInput = () => {
@@ -9,14 +9,16 @@ export const CStartInput = () => {
 
     return (
         <div className='stars__radio__input__wrapper'>
-            {[...Array(5)].map((star, index) => {
+            {[...Array(5)].map((stars, index) => {
                 const currentRating = index + 1;
                 return (
+
+
                     <label htmlFor={`${currentRating}`} key={Math.random()}>
 
                         <input
                             type="radio"
-                            name='star'
+                            name='stars'
                             id={`${currentRating}`}
                             value={currentRating}
                             onClick={() => setRating(currentRating)}
@@ -26,7 +28,12 @@ export const CStartInput = () => {
                             onMouseEnter={() => setHover(currentRating)}
                             onMouseLeave={() => setHover(0)}
                         />
+                        <label key={Math.random()}>
+                            <input type="number" name="star" defaultValue={rating} />
+                        </label>
                     </label>
+
+
                 )
             })}
         </div>

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { CColorRadio } from '../common/CColorRadio/CColorRadio';
 import { CSizeRadio } from '../common/CSizeRadio/CSizeRadio';
-import './OrderProduct.scss';
 import { CPrice } from '../common/CPrice/CPrice';
 import { CFormButton } from '../common/CFormButton/CFormButton';
+import './OrderProduct.scss';
 
 export const OrderProduct = ({
     product
@@ -14,15 +14,15 @@ export const OrderProduct = ({
     const [price, setPrice] = useState(product.price);
 
     const sizeHandler = (e) => {
-        const [sizeOne,sizeTwo,sizeThree, ...rest] = product.size; 
-        if(e.currentTarget.value === sizeOne){
+        const [sizeOne, sizeTwo, sizeThree, ...rest] = product.size;
+        if (e.currentTarget.value === sizeOne) {
             setPrice(product.price * 0.9);
-        }else if (e.currentTarget.value ===  sizeTwo){
+        } else if (e.currentTarget.value === sizeTwo) {
             setPrice(product.price * 1.15);
-        }else if (e.currentTarget.value === sizeThree){
+        } else if (e.currentTarget.value === sizeThree) {
             setPrice(product.price * 0.8);
         }
-        
+
         setSize(e.currentTarget.value);
     }
     const colorHandler = (e) => {
@@ -37,7 +37,14 @@ export const OrderProduct = ({
         setColor(e.currentTarget.value);
     }
 
-
+    const shopNowHandler = (e) => {
+        e.preventDefault();
+        console.log(e.currentTarget);
+    }
+    const addCartHandler = (e) => {
+        e.preventDefault();
+        console.log(e.currentTarget);
+    }
     return (
         <section className='order__product'>
             <form className='order__product__form'>
@@ -69,8 +76,8 @@ export const OrderProduct = ({
 
                 <div className='order__product__form__price__buttons'>
                     <CPrice price={price} initialPrice={product.price} />
-                    <CFormButton title={"Shop Now"} />
-                    <CFormButton title={"Add to cart"} />
+                    <CFormButton title={"Shop Now"} clickHandler={shopNowHandler} />
+                    <CFormButton title={"Add to cart"} clickHandler={addCartHandler} />
                 </div>
 
             </form>

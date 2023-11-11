@@ -1,9 +1,10 @@
 import './CFormButton.scss';
 
 export const CFormButton = ({
-    title
+    title,
+    clickHandler
 }) => {
     return (
-        <button className='form__button'>{title}</button>
+        <button className='form__button' onClick={clickHandler}>{title}</button>
     )
 }
