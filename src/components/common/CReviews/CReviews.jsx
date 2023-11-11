@@ -1,13 +1,16 @@
-import { starsCount } from '../../../utils/utils';
+import { useContext } from 'react';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
+import { starsCount } from '../../../utils/utils';
+import { CommentsContext } from '../../../context/CommentsContext';
 import './CReviews.scss';
 
-export const CReviews = ({
-    reviews
-}) => {
+export const CReviews = () => {
+
+    const {commentsData} = useContext(CommentsContext);
+
     let stars;
-    if (reviews) {
-        stars = starsCount(reviews);
+    if (commentsData) {
+        stars = starsCount(commentsData);
     }
 
     return (
@@ -29,7 +32,7 @@ export const CReviews = ({
                         : null
                 }
             </div>
-            <span>{reviews?.length} reviews</span>
+            <span>{110 + commentsData?.length} reviews</span>
         </section>
     )
 }

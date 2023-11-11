@@ -7,6 +7,7 @@
     position: relative;
     
     &__current__product{
+        position: relative;
         @include gs.flex(column,center,center); 
     }
     

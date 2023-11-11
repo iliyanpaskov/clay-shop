@@ -32,7 +32,7 @@ export const CurrentProduct = ({
                     <CHeart />
                 </section>
                 <h1 className='current__product__information__model'>{product.model}</h1>
-                <CReviews reviews={product.reviews} />
+                <CReviews />
                 <CProductInformation product={product} />
                 <OrderProduct product={product}/>
             </article>

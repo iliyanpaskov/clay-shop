@@ -25,7 +25,7 @@ export const ProductPage = () => {
 
         <section className='product__page'>
             {
-                !currentProduct
+                !currentProduct.objectId
                     ? <CLoader />
                     : <>
                         <article className='product__page__current__product'>

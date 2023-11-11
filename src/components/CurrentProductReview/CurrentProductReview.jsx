@@ -30,6 +30,7 @@ export const CurrentProductReview = ({
         });
 
         addComment(newComment);
+        e.currentTarget.reset();
     }
 
     return (
@@ -52,7 +53,6 @@ export const CurrentProductReview = ({
                     <CTextarea id={"message"} name={"message"} placeholder={"Type message ..."} />
                 </div>
                 <CFormButton title={'Add Review'} />
-                {/* <input type='submit' value={'Add Review'}  /> */}
             </form>
 
             <article className='review__section__comments'>

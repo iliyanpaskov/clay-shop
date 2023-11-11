@@ -1,19 +1,22 @@
 import { Header } from './components/Header/Header';
 import { ProductPage } from './pages/ProductPage/ProductPage';
 import { Footer } from './components/Footer/Footer';
-import './App.css';
 import { CommentsProvider } from './context/CommentsContext';
+import { CartProvider } from './context/CartContext';
+import './App.css';
 
 function App() {
 
 	return (
 		<>
 			<CommentsProvider>
-				<Header />
-				<main>
-					<ProductPage />
-				</main>
-				<Footer />
+				<CartProvider>
+					<Header />
+					<main>
+						<ProductPage />
+					</main>
+					<Footer />
+				</CartProvider>
 			</CommentsProvider>
 		</>
 	)
