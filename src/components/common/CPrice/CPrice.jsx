@@ -9,8 +9,8 @@ export const CPrice = ({
             <p>$</p>
             {
                 price
-                    ? <p>{price}</p>
-                    : <p>{initialPrice}</p>
+                    ? <p>{Math.floor(price)}</p>
+                    : <p>{Math.floor(initialPrice)}</p>
             }
         </div>
     )
