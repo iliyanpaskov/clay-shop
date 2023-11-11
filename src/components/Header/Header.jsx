@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 import './Header.scss';
 
 export const Header = () => {
-    
+
+    const {cartData} = useContext(CartContext);
+
     return (
         <header className='header'>
 
@@ -17,9 +20,13 @@ export const Header = () => {
                     <img src="/icons/facebook.svg" alt="facebook" />
                 </article>
                 <article className='header__top__icons'>
-                    <img src="/icons/search.svg" alt="facebook" />
-                    <img src="/icons/cart.svg" alt="facebook" />
-
+                    <div>
+                        <img src="/icons/search.svg" alt="facebook" />
+                    </div>
+                    <div>
+                        <img src="/icons/cart.svg" alt="facebook" />
+                        <p className='header__top__icons__cart__count'>{cartData.length}</p>
+                    </div>
                 </article>
             </section>
 

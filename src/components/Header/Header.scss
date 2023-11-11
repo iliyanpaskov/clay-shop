@@ -29,14 +29,35 @@
         }
 
         &__icons {
-            &>img {
-                cursor: pointer;
-                margin-left: 1.46rem;
-                transition: 0.5s;
+            @include gs.flex(row, none, center);
 
-                &:hover {
-                    transform: scale(1.15);
+            &>div {
+                position: relative;
+                &>img {
+                    cursor: pointer;
+                    margin-left: 1.46rem;
+                    transition: 0.5s;
+
+                    &:hover {
+                        transform: scale(1.15);
+                    }
                 }
+            }
+
+            &__cart__count{
+                margin: 0;
+                position: absolute;
+                right: -0.55rem;
+                top: -0.5rem;
+                background: gs.$pink;
+                font-size: 0.7rem;
+                width: 1.05rem;
+                height: 1.05rem;
+                text-align: center;
+                border-radius: 50%;
+                @include gs.flex(column,center,center);
+                color: gs.$white;
+                font-weight: 600;
             }
         }
     }
@@ -58,7 +79,7 @@
                 font-weight: 600;
                 transition: 0.5s;
                 position: relative;
-                @include gs.flex(column,center,center);
+                @include gs.flex(column, center, center);
 
                 &::after {
                     content: '';
