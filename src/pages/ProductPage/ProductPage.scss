@@ -4,6 +4,7 @@
     width: 100%;
     background: gs.$gray-background-color;
     padding: 3.875rem;
+    position: relative;
     
     &__current__product{
         @include gs.flex(column,center,center); 
