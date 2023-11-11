@@ -1,6 +1,7 @@
 @use '../../../globalStyles/' as gs;
 
 .stars__radio__input__wrapper {
+    width: 10.5rem;
     &>label {
         &>input {
             display: none;

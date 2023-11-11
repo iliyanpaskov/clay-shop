@@ -1,0 +1,13 @@
+@use '../../../globalStyles/' as gs;
+
+.form__input {
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    border: 2px solid gs.$popularity-background ;
+
+    &::placeholder {
+        color: gs.$popularity-background;
+        padding: 1rem;
+    }
+}

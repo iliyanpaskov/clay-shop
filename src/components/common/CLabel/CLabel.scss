@@ -1,0 +1,8 @@
+@use '../../../globalStyles/' as gs;
+
+.form__label {
+    color: gs.$text-color;
+    font-size: 1rem;
+    font-weight: 600;
+    margin:0.3rem 0 0.53rem;
+}

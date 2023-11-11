@@ -4,7 +4,7 @@ export const CLabel = ({
     inputId,
     title
 }) => {
-  return (
-    <label className="form__label" role="input-lable" htmlFor={inputId}>{title}</label>
-  )
+    return (
+        <label className="form__label" htmlFor={inputId}>{title}</label>
+    )
 }
