@@ -4,6 +4,7 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
 
+    const [isCartShowen, setIsCartShowen] = useState(false);
     const [cartData, setCartData] = useState([
         {
             images: ["https://cdn.sportdepot.bg/files/products/33978-419_01.jpg",],
@@ -29,8 +30,18 @@ export const CartProvider = ({ children }) => {
 
     }
 
+    const showCart = () => {
+        setIsCartShowen(true);
+    }
+
+    const hideCart = () => {
+        setIsCartShowen(false);
+    }
+
+
+
     return (
-        <CartContext.Provider value={{ cartData, addItem, removeItem }}>
+        <CartContext.Provider value={{ cartData, addItem, removeItem, isCartShowen, showCart, hideCart }}>
             {children}
         </CartContext.Provider>
     )

@@ -1,0 +1,68 @@
+@use '../../../globalStyles/' as gs;
+
+.cart__card {
+    position: relative;
+    width: 100%;
+    height: 11rem;
+    padding:1rem 2rem;
+    @include gs.flex(row, space-between, center);
+    border-bottom: 1px solid gs.$option-after-color;
+
+    &__item__wrapper{
+        @include gs.flex(row,none,center);
+    }
+
+    &__image {
+        width: 7rem;
+        height: 7rem;
+
+        &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__item__props {
+        @include gs.flex(column, space-between, flex-start);
+        width: 21rem;
+        padding: 0.4rem;
+
+        &>h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin: 0.3rem 0;
+        }
+
+        &>p {
+            font-size: 1rem;
+            color: gs.$text-color;
+            margin: 0.3rem 0;
+
+            &>span {
+                display: inline-block;
+                margin-left: 0.5rem;
+                color: gs.$light-text-color;
+            }
+            
+        }
+
+        &>div {
+            width: 6rem;
+            @include gs.flex(row, space-between, center);
+        }
+    }
+    
+            &>svg{
+                color: gs.$second-light-text-color;
+                font-size: 1.3rem;
+                transition: 0.5s;
+                cursor: pointer;
+
+                &:hover{
+                    color: gs.$red;
+                    transform: scale(1.1);
+                }
+            }
+
+}

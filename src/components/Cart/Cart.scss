@@ -1,0 +1,57 @@
+@use '../../globalStyles/' as gs;
+
+.cart {
+    min-height: 18.7rem;
+
+    width: 71.25rem;
+    background: gs.$white;
+    border-radius: 1rem;
+
+    &__wrapper {
+        position: absolute;
+        inset: 0;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: gs.$loager-background;
+        z-index: 4;
+        @include gs.flex(column, center, center);
+    }
+
+    &__header {
+        width: 100%;
+
+        &>ul {
+            @include gs.flex(row, none, center);
+            margin: 0;
+
+            &>li {
+                width: 25%;
+                text-align: center;
+                
+                &>a {
+                    display: inline-block;
+                    width: 100%;
+                    @include gs.flex(column, center, center);
+                    padding: 0.9rem 0;
+                    border-bottom: 1px solid gs.$option-after-color ;
+                    color: gs.$second-light-text-color;
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    transition: 0.5s;
+
+                    &:hover{
+                        color: gs.$text-color;
+                        border-bottom: 1px solid gs.$pink;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.link__active {
+    color: gs.$text-color !important;
+    border-bottom: 1px solid gs.$pink !important;
+}
