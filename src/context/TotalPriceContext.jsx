@@ -22,8 +22,12 @@ export const TotalPriceProvider = ({ children }) => {
         setTotalPrice(totalPrice - price);
     }
 
+    const resetPrice = () => {
+        setTotalPrice(0);
+    }
+
     return (
-        <TotalPriceContext.Provider value={{ totalPrice, setStartPrice, increaseTotalPrice, decreaseTotalPrice }}>
+        <TotalPriceContext.Provider value={{ totalPrice, setStartPrice, increaseTotalPrice, decreaseTotalPrice,resetPrice }}>
             {children}
         </TotalPriceContext.Provider>
     )

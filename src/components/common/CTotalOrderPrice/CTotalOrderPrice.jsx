@@ -1,11 +1,17 @@
 import { useContext } from 'react';
 import { TotalPriceContext } from '../../../context/TotalPriceContext';
-import './CTotalOrderPrice.scss';
 import { CPrice } from '../CPrice/CPrice';
+import { CartContext } from '../../../context/CartContext';
+import './CTotalOrderPrice.scss';
 
 export const CTotalOrderPrice = () => {
 
-    const { totalPrice } = useContext(TotalPriceContext);
+    const { cartData } = useContext(CartContext);
+    const { totalPrice, resetPrice } = useContext(TotalPriceContext);
+
+    if (cartData.length < 1) {
+        resetPrice();
+    }
 
     return (
         <article className='cart__total__price'>
