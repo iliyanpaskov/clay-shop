@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { BsStarFill } from 'react-icons/bs';
-import './CStartInput.scss';
+import './CStarsInput.scss';
 
-export const CStartInput = () => {
+export const CStarsInput = () => {
 
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);

@@ -1,6 +1,8 @@
 @use '../../../globalStyles/' as gs;
 
 .color__radio {
+    
+    
     &>label {
         position: relative;
         display: inline-block;
@@ -9,6 +11,11 @@
         border-radius: 0.2rem;
         margin-right: 1rem;
         cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
 
         &>input {
             visibility: hidden;
@@ -40,10 +47,7 @@
                 0 2px 0 #000,
                 0 -2px 0 #000;
         }
-
-
-
-
-
     }
+
+
 }

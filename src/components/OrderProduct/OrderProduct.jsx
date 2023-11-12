@@ -52,8 +52,9 @@ export const OrderProduct = ({
             images: product.images,
             model: product.model,
             size: size,
-            colors: color,
-            price: price
+            colors: color,  
+            price: price,
+            count:product.count
         }
         addItem(newItem);
         showCart();

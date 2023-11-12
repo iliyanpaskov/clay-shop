@@ -12,7 +12,8 @@ export const CartProvider = ({ children }) => {
             model: "HELLY HANSEN 911 W HH",
             size: "S",
             colors: "green",
-            price: 84
+            price: 84,
+            count: 1
         },
         {
             objectId: '2',
@@ -20,7 +21,8 @@ export const CartProvider = ({ children }) => {
             model: "UNDER ARMOUR Sonic X",
             size: ["37"],
             colors: ["black"],
-            price: 112
+            price: 112,
+            count: 1
         }
     ]);
 
@@ -40,8 +42,6 @@ export const CartProvider = ({ children }) => {
     const hideCart = () => {
         setIsCartShowen(false);
     }
-
-
 
     return (
         <CartContext.Provider value={{ cartData, addItem, removeItem, isCartShowen, showCart, hideCart }}>

@@ -2,7 +2,7 @@ import { CComment } from '../common/CComment/CComment';
 import { CFormButton } from '../common/CFormButton/CFormButton';
 import { CInput } from '../common/CInput/CInput';
 import { CLabel } from '../common/CLabel/CLabel';
-import { CStartInput } from '../common/CStartInput/CStartInput';
+import { CStarsInput } from '../common/CStarsInput/CStarsInput';
 import { CTextarea } from '../common/CTextarea/CTextarea';
 import { useContext } from 'react';
 import { CommentsContext } from '../../context/CommentsContext';
@@ -37,7 +37,7 @@ export const CurrentProductReview = ({
         <section className='review__section'>
             <h1>reviews</h1>
             <form onSubmit={submitHandler}>
-                <CStartInput />
+                <CStarsInput />
                 <div>
                     <div>
                         <CLabel inputId={"name"} title={"Name"} />

@@ -3,23 +3,26 @@ import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 import { CCartCard } from '../common/CCartCard/CCartCard';
 import { CFormButton } from '../common/CFormButton/CFormButton';
-import './Cart.scss';
 import { CEmptyCartMessage } from '../common/CEmptyCartMessage/CEmptyCartMessage';
+import { CTotalOrderPrice } from '../common/CTotalOrderPrice/CTotalOrderPrice';
+import './Cart.scss';
 
 export const Cart = () => {
+
     const { isCartShowen, cartData, hideCart } = useContext(CartContext);
     if (!isCartShowen) return null;
 
     const toShopHandler = () => {
-        hideCart()
+        hideCart();
     }
-
+    
     const continueHandler = () => {
-
+        hideCart();
+        //Notification and Cart count = 0
     }
 
     return (
-        <div className='cart__wrapper' onClick={hideCart}>
+        <div className='cart__wrapper' onClick={toShopHandler}>
             <section className='cart' onClick={(e) => e.stopPropagation()}>
                 <article className='cart__header'>
                     <ul>
@@ -49,9 +52,7 @@ export const Cart = () => {
 
                 </article>
 
-                <article className='cart__total__price'>
-                    <h2>Total amount</h2>
-                </article>
+                <CTotalOrderPrice/>
 
                 <div className='cart__buttons__wrapper'>
                     <CFormButton title={'To shop'} clickHandler={toShopHandler} />

@@ -9,7 +9,12 @@
         border: 3px solid gs.$popularity-background;
         border-radius: 0.5rem;
         cursor: pointer;
-        
+        transition: 0.5s;
+
+        &:hover {
+            background: gs.$pink;
+        }
+
         &>input {
             visibility: hidden;
         }

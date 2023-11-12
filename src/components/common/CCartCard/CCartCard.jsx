@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../../context/CartContext';
 import { CColorRadio } from '../CColorRadio/CColorRadio';
 import { CCartItemCount } from '../CCartItemCount/CCartItemCount';
 import { CPrice } from '../CPrice/CPrice';
 import { CRemoveItemButton } from '../CRemoveItemButton/CRemoveItemButton';
+import { TotalPriceContext } from '../../../context/TotalPriceContext';
 import './CCartCard.scss';
 
 export const CCartCard = ({
@@ -11,7 +12,14 @@ export const CCartCard = ({
 }) => {
 
     const [count, setCount] = useState(1);
+    const [amount, setAmount] = useState(item.price)
     const { removeItem } = useContext(CartContext);
+    const {setStartPrice, increaseTotalPrice ,decreaseTotalPrice} = useContext(TotalPriceContext);
+
+    useEffect(()=>{
+     setStartPrice(item.price)
+    },[])
+
 
     const removeItemHandler = (e) => {
         removeItem(e.currentTarget.value);
@@ -20,12 +28,16 @@ export const CCartCard = ({
     const increaseHandler = () => {
         if (count < 5) {
             setCount(count + 1);
+            setAmount(item.price);
+            increaseTotalPrice(amount)
         }
     }
 
     const decreaseHandler = () => {
         if (count > 1) {
             setCount(count - 1);
+            setAmount(item.price);
+            decreaseTotalPrice(amount);
         }
     }
 

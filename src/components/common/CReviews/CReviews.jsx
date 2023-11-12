@@ -6,7 +6,7 @@ import './CReviews.scss';
 
 export const CReviews = () => {
 
-    const {commentsData} = useContext(CommentsContext);
+    const { commentsData } = useContext(CommentsContext);
 
     let stars;
     if (commentsData) {
@@ -32,7 +32,7 @@ export const CReviews = () => {
                         : null
                 }
             </div>
-            <span>{110 + commentsData?.length} reviews</span>
+            <span>{commentsData?.length} reviews</span>
         </section>
     )
 }
