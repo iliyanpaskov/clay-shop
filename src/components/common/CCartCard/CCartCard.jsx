@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CColorRadio } from '../CColorRadio/CColorRadio';
 import { CCartItemCount } from '../CCartItemCount/CCartItemCount';
 import { CPrice } from '../CPrice/CPrice';
-import {FaXmark} from 'react-icons/fa6'
+import { FaXmark } from 'react-icons/fa6'
 import './CCartCard.scss';
 
 export const CCartCard = ({
@@ -10,13 +10,18 @@ export const CCartCard = ({
 }) => {
 
     const [count, setCount] = useState(1);
-
+   
     const increaseHandler = () => {
-
+        if (count < 5) {
+            setCount(count + 1);
+        }
+        
     }
-
+    
     const decreaseHandler = () => {
-
+        if (count > 1) {
+            setCount(count - 1);
+        }
     }
 
     return (
@@ -35,8 +40,8 @@ export const CCartCard = ({
                 </div>
             </div>
             <CCartItemCount count={count} increase={increaseHandler} decrease={decreaseHandler} />
-            <CPrice initialPrice={item.price} price={item.price}/>
-            <FaXmark/>
+            <CPrice initialPrice={item.price * count} price={item.price * count} />
+            <FaXmark />
         </article>
     )
 }
