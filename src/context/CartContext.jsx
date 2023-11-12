@@ -35,6 +35,10 @@ export const CartProvider = ({ children }) => {
         setCartData([...arr]);
     }
 
+    const emptyCart = () => {
+        setCartData([])
+    }
+
     const showCart = () => {
         setIsCartShowen(true);
     }
@@ -44,7 +48,7 @@ export const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{ cartData, addItem, removeItem, isCartShowen, showCart, hideCart }}>
+        <CartContext.Provider value={{ cartData, addItem, removeItem, isCartShowen, showCart, hideCart,emptyCart }}>
             {children}
         </CartContext.Provider>
     )

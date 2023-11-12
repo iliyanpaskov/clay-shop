@@ -10,7 +10,7 @@ import './Cart.scss';
 
 export const Cart = () => {
 
-    const { isCartShowen, cartData, hideCart } = useContext(CartContext);
+    const { isCartShowen, cartData, hideCart,emptyCart } = useContext(CartContext);
     if (!isCartShowen) return null;
 
     const toShopHandler = () => {
@@ -19,7 +19,8 @@ export const Cart = () => {
     
     const continueHandler = () => {
         hideCart();
-        successNotification('You order accepted !!!')
+        successNotification('You order accepted !!!');
+        emptyCart();
     }
 
     return (
