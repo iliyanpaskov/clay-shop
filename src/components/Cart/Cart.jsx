@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { CCartCard } from '../common/CCartCard/CCartCard';
 import { CFormButton } from '../common/CFormButton/CFormButton';
 import './Cart.scss';
+import { CEmptyCartMessage } from '../common/CEmptyCartMessage/CEmptyCartMessage';
 
 export const Cart = () => {
-    const { isCartShowen, cartData ,hideCart} = useContext(CartContext);
+    const { isCartShowen, cartData, hideCart } = useContext(CartContext);
     if (!isCartShowen) return null;
 
     const toShopHandler = () => {
@@ -19,7 +20,7 @@ export const Cart = () => {
 
     return (
         <div className='cart__wrapper' onClick={hideCart}>
-            <section className='cart' onClick={(e)=>e.stopPropagation()}>
+            <section className='cart' onClick={(e) => e.stopPropagation()}>
                 <article className='cart__header'>
                     <ul>
                         <li>
@@ -38,7 +39,14 @@ export const Cart = () => {
                 </article>
 
                 <article className='cart__cards'>
-                    {cartData.map(x => <CCartCard key={Math.random()} item={x} />)}
+                    {
+                        cartData.length > 0
+                            ? <>
+                                {cartData.map(x => <CCartCard key={Math.random()} item={x} />)}
+                            </>
+                            : <CEmptyCartMessage />
+                    }
+
                 </article>
 
                 <article className='cart__total__price'>
