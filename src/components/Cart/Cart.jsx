@@ -5,6 +5,7 @@ import { CCartCard } from '../common/CCartCard/CCartCard';
 import { CFormButton } from '../common/CFormButton/CFormButton';
 import { CEmptyCartMessage } from '../common/CEmptyCartMessage/CEmptyCartMessage';
 import { CTotalOrderPrice } from '../common/CTotalOrderPrice/CTotalOrderPrice';
+import { successNotification } from '../../services/notificationServices';
 import './Cart.scss';
 
 export const Cart = () => {
@@ -18,7 +19,7 @@ export const Cart = () => {
     
     const continueHandler = () => {
         hideCart();
-        //Notification and Cart count = 0
+        successNotification('You order accepted !!!')
     }
 
     return (

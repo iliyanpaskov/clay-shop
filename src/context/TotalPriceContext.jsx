@@ -11,7 +11,7 @@ export const TotalPriceProvider = ({ children }) => {
         setInitialPrice(initialPrice.push(price));
         let amount = initialPrice.reduce((acc, num) => acc + num, 0);
         setTotalPrice(amount);
-        setInitialPrice([])
+        setInitialPrice([]);
     }
 
     const increaseTotalPrice = (price) => {

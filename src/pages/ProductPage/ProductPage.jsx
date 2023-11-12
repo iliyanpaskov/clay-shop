@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { getSingleProduct } from '../../services/productsServices/productsServices';
+import { getSingleProduct } from '../../services/productsServices';
 import { CurrentProduct } from '../../components/CurrentProduct/CurrentProduct';
 import { CurrentProductReview } from '../../components/CurrentProductReview/CurrentProductReview';
 import { CommentsContext } from '../../context/CommentsContext';

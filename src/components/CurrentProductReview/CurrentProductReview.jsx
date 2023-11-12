@@ -6,6 +6,7 @@ import { CStarsInput } from '../common/CStarsInput/CStarsInput';
 import { CTextarea } from '../common/CTextarea/CTextarea';
 import { useContext } from 'react';
 import { CommentsContext } from '../../context/CommentsContext';
+import { happyNotification } from '../../services/notificationServices';
 import './CurrentProductReview.scss';
 
 export const CurrentProductReview = ({
@@ -31,6 +32,7 @@ export const CurrentProductReview = ({
 
         addComment(newComment);
         e.currentTarget.reset();
+        happyNotification('Thank you for your comment!');
     }
 
     return (

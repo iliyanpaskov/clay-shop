@@ -5,6 +5,7 @@ import { CCartItemCount } from '../CCartItemCount/CCartItemCount';
 import { CPrice } from '../CPrice/CPrice';
 import { CRemoveItemButton } from '../CRemoveItemButton/CRemoveItemButton';
 import { TotalPriceContext } from '../../../context/TotalPriceContext';
+import { infoNotification, sadNotification } from '../../../services/notificationServices';
 import './CCartCard.scss';
 
 export const CCartCard = ({
@@ -23,13 +24,16 @@ export const CCartCard = ({
 
     const removeItemHandler = (e) => {
         removeItem(e.currentTarget.value);
+        sadNotification(`${item.model} removed for your cart!`)
     }
 
     const increaseHandler = () => {
         if (count < 5) {
             setCount(count + 1);
             setAmount(item.price);
-            increaseTotalPrice(amount)
+            increaseTotalPrice(amount);
+        }else{
+            infoNotification('Maximum count for order is 5 !');
         }
     }
 

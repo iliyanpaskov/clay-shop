@@ -5,6 +5,7 @@ import { CSizeRadio } from '../common/CSizeRadio/CSizeRadio';
 import { CPrice } from '../common/CPrice/CPrice';
 import { CFormButton } from '../common/CFormButton/CFormButton';
 import './OrderProduct.scss';
+import { happyNotification } from '../../services/notificationServices';
 
 export const OrderProduct = ({
     product
@@ -42,9 +43,8 @@ export const OrderProduct = ({
 
     const shopNowHandler = (e) => {
         e.preventDefault();
-
-        console.log(size);
     }
+
     const addCartHandler = (e) => {
         e.preventDefault();
         const newItem = {
@@ -58,6 +58,7 @@ export const OrderProduct = ({
         }
         addItem(newItem);
         showCart();
+        happyNotification(`${product.model} was successfully added!`)
 
     }
     return (
