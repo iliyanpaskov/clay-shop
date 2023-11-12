@@ -13,6 +13,10 @@
         cursor: pointer;
         transition: 0.5s;
 
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            margin: 0 1rem 1rem 1rem;
+        }
+
         &:hover {
             transform: scale(1.1);
         }

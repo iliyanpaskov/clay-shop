@@ -11,10 +11,18 @@
         &__props {
             width: 100%;
             @include gs.flex(row, space-between, flex-start);
+
+            @include gs.breakpoint(mobile-start, mobile-end) {
+                @include gs.flex(column, space-between, center);
+            }
         }
 
         &__sizes {
-            min-width: 14.6rem;
+            width: 14.6rem;
+
+            @include gs.breakpoint(tablet-start, tablet-end) {
+                width: 49%;
+            }
 
             &__text,
             &__values {
@@ -39,14 +47,30 @@
 
         &__color {
             @include gs.flex(column, none, flex-start);
-            width: 10rem;
+            width: 11rem;
             margin-right: 1.6rem;
+
+            @include gs.breakpoint(tablet-start, tablet-end) {
+                margin-right: 0;
+                margin-inline: auto;
+                @include gs.flex(column, center, center);
+            }
+
+            @include gs.breakpoint(mobile-start, mobile-end) {
+                margin-right: 0;
+                margin-inline: auto;
+            }
 
             &>p {
                 text-transform: capitalize;
                 font-size: 1rem;
                 font-weight: 400;
                 margin: 0 0 1rem 0;
+
+                @include gs.breakpoint(mobile-start, mobile-end) {
+                    margin: 1rem 0 0.5rem 0;
+                    margin-inline: auto;
+                }
             }
 
             &>div {
@@ -57,7 +81,16 @@
 
         &__price__buttons {
             width: 94%;
-            @include gs.flex(row,space-between,center);
+            @include gs.flex(row, space-between, center);
+
+            @include gs.breakpoint(tablet-start, tablet-end) {
+                width: 65%;
+                margin-inline: auto;
+            }
+
+            @include gs.breakpoint(mobile-start, mobile-end) {
+                width: 100%;
+            }
         }
     }
 

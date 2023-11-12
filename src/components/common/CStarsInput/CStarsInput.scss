@@ -2,6 +2,15 @@
 
 .stars__radio__input__wrapper {
     width: 10.5rem;
+
+    @include gs.breakpoint(tablet-start, tablet-end) {
+        width: 9.5rem;
+    }
+
+    @include gs.breakpoint(mobile-start, mobile-end) {
+       width: 9rem;
+    }
+
     &>label {
         &>input {
             display: none;
@@ -14,9 +23,19 @@
             margin: 0.35rem;
             transition: 0.5s;
 
+            @include gs.breakpoint(tablet-start, tablet-end) {
+                font-size: 1.35rem;
+                margin: 0.35rem;
+            }
+
+            @include gs.breakpoint(mobile-start, mobile-end) {
+                font-size: 1.2rem;
+                margin: 0.3rem;
+            }
         }
-        &>label{
-            display:none;
+
+        &>label {
+            display: none;
         }
     }
 }

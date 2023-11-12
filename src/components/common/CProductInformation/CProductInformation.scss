@@ -11,6 +11,16 @@
         padding-right: 6%;
         user-select: none;
 
+        @include gs.breakpoint(display-start,display-end){
+            padding: 0;
+        }
+        @include gs.breakpoint(tablet-start,tablet-end){
+           padding: 0;
+        }
+        @include gs.breakpoint(mobile-start,mobile-end){
+           padding: 0;
+        }
+
         &>button {
             position: relative;
             width: 33%;
@@ -52,6 +62,15 @@
             color: gs.$light-text-color;
             transition: 1s;
             animation: showOpacity 1s forwards;
+
+            @include gs.breakpoint(tablet-start,tablet-end){
+                text-align: center;
+                font-size: 0.95rem;
+            }
+            @include gs.breakpoint(mobile-start,mobile-end){
+                 text-align: center;
+                 font-size: 0.9rem;
+             }
         }
     }
 }

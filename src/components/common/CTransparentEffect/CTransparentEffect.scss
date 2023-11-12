@@ -1,4 +1,6 @@
-.transparent__end{
+@use '../../../globalStyles/' as gs;
+
+.transparent__end {
     width: 4.5rem;
     height: 120%;
     position: absolute;
@@ -8,4 +10,11 @@
     background: linear-gradient(90deg, #ffffff00 0%, #ffffff47 17%, #ffffff7c 36%, #ffffff9d 60%, #ffffff 98%);
     transition: 0.5s;
 
+    @include gs.breakpoint(tablet-start, tablet-end) {
+        display: none;
+    }
+
+    @include gs.breakpoint(mobile-start, mobile-end) {
+        display: none;
+    }
 }

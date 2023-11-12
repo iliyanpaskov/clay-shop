@@ -3,13 +3,23 @@
 .current__product__information__reviews {
     @include gs.flex(row, center, center);
     margin-bottom: 1rem;
+
     &>div>svg {
         margin-right: 0.7rem;
         font-size: 1.5rem;
         color: gs.$pink;
+
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            font-size: 1.2rem;
+        }
     }
 
-    &>span{
+    &>span {
         margin-left: 0.6rem;
+
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            font-size: 0.8rem;
+            margin: 0;
+        }
     }
 }

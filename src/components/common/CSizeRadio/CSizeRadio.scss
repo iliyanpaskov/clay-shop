@@ -11,6 +11,11 @@
         cursor: pointer;
         transition: 0.5s;
 
+        @include gs.breakpoint(tablet-start, tablet-end) {
+            width: 3.5rem;
+            height: 2.25rem;
+        }
+
         &:hover {
             background: gs.$pink;
         }

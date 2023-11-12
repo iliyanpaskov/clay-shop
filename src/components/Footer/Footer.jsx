@@ -23,7 +23,7 @@ export const Footer = () => {
             </nav>
 
             <section className='footer__lists'>
-                <article>
+                <article className='one'>
                     <img src="/icons/clay_shop_logo.svg" alt="logo" />
                     <p>
                         Fashion is a popular
@@ -32,7 +32,7 @@ export const Footer = () => {
                     </p>
                 </article>
 
-                <article>
+                <article className='two'>
                     <h3>Hot links</h3>
                     <ul>
                         <li>
@@ -50,7 +50,7 @@ export const Footer = () => {
                     </ul>
                 </article>
 
-                <article>
+                <article className='three'>
                     <h3>More info</h3>
                     <ul>
                         <li>
@@ -67,7 +67,7 @@ export const Footer = () => {
                         </li>
                     </ul>
                 </article>
-                <article>
+                <article className='four'>
                     <h3>Customer care</h3>
                     <ul>
                         <li>

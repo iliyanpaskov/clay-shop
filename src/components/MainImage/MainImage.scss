@@ -8,7 +8,24 @@
     @include gs.flex(column, center, center);
     user-select: none;
     transition: 0.5s; 
-
+    
+    
+    @include gs.breakpoint(display-start,display-end){
+        width: 15rem;
+        height: 24rem;
+        margin-bottom: 1.5rem;;
+    }
+    @include gs.breakpoint(tablet-start,tablet-end){
+        width: 15rem;
+        height: 24rem;
+        margin-bottom: 1rem;
+    }
+    @include gs.breakpoint(mobile-start,mobile-end){
+        width: 14.5rem;
+        height: 23rem;
+        margin-bottom: 2rem;
+    
+    }
     &>img {
         width: 100%;
         height: 100%;

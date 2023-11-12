@@ -3,8 +3,9 @@
 .product__page{
     width: 100%;
     background: gs.$gray-background-color;
-    padding: 3.875rem 0;
+    padding: 3.875rem 0.5rem;
     position: relative;
+    overflow: hidden;
     
     &__current__product{
         position: relative;

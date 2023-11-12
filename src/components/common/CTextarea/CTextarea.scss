@@ -11,6 +11,21 @@
     color: gs.$text-color;
     font-size: 1rem;
 
+    @include gs.breakpoint(tablet-start, tablet-end) {
+        font-size: 0.9rem;
+        height: 6.5rem;
+        border: 1px solid gs.$popularity-background;
+        padding: 0.7rem;
+        
+    }
+    
+    @include gs.breakpoint(mobile-start, mobile-end) {
+        font-size: 0.85rem;
+        height: 5rem;
+        border: 1px solid gs.$popularity-background;
+        padding: 0.5rem;
+    }
+
     &::placeholder {
         color: gs.$popularity-background;
         padding: 1rem;

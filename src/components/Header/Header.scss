@@ -2,7 +2,6 @@
 
 .header {
     width: 100%;
-    // min-width: 85.375rem;
     height: 11.25rem;
     margin-inline: auto;
     @include gs.flex(column, center, center);
@@ -13,10 +12,32 @@
         @include gs.flex(row, space-between, center);
         padding: 2rem 3.25rem 3rem 2.5rem;
 
+        @include gs.breakpoint(tablet-start, tablet-end) {
+           padding: 2rem;
+        }
+
+        &__logo {
+            &>img {
+                @include gs.breakpoint(tablet-start, tablet-end) {
+                    width: 7rem;
+                }
+                @include gs.breakpoint(mobile-start, mobile-end) {
+                    width: 7rem;
+                }
+            }
+        }
+
         &__social__icons {
             margin-right: 2.26rem;
             @include gs.flex(row, space-between, center);
             width: 10.2rem;
+
+            @include gs.breakpoint(tablet-start, tablet-end) {
+                width: 7.5rem;
+            }
+            @include gs.breakpoint(mobile-start, mobile-end) {
+                display: none;
+            }
 
             &>img {
                 cursor: pointer;
@@ -33,10 +54,19 @@
 
             &>div {
                 position: relative;
+
                 &>img {
                     cursor: pointer;
                     margin-left: 1.46rem;
                     transition: 0.5s;
+
+                    @include gs.breakpoint(tablet-start, tablet-end) {
+                        width: 1.2rem;
+                    }
+
+                    @include gs.breakpoint(tablet-start, tablet-end) {
+                        width: 1.1rem;
+                    }
 
                     &:hover {
                         transform: scale(1.15);
@@ -44,7 +74,7 @@
                 }
             }
 
-            &__cart__count{
+            &__cart__count {
                 margin: 0;
                 position: absolute;
                 right: -0.55rem;
@@ -55,7 +85,7 @@
                 height: 1.05rem;
                 text-align: center;
                 border-radius: 50%;
-                @include gs.flex(column,center,center);
+                @include gs.flex(column, center, center);
                 color: gs.$white;
                 font-weight: 600;
             }
@@ -73,6 +103,15 @@
             text-transform: capitalize;
             padding: 0 0.8rem 0.38rem 0;
 
+            @include gs.breakpoint(tablet-start, tablet-end) {
+                width: 80%;
+            }
+
+            @include gs.breakpoint(mobile-start, mobile-end) {
+                width: 95%;
+            }
+
+
             &>li>a {
                 color: gs.$text-color;
                 font-size: 1.5rem;
@@ -80,6 +119,14 @@
                 transition: 0.5s;
                 position: relative;
                 @include gs.flex(column, center, center);
+
+                @include gs.breakpoint(tablet-start, tablet-end) {
+                    font-size: 1.3rem;
+                }
+
+                @include gs.breakpoint(mobile-start, mobile-end) {
+                    font-size: 1rem;
+                }
 
                 &::after {
                     content: '';

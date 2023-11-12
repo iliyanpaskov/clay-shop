@@ -1,6 +1,6 @@
 @use '../../../globalStyles/' as gs;
 
-.form__button{
+.form__button {
     font-size: 1.25rem;
     width: 10rem;
     height: 3.25rem;
@@ -10,10 +10,24 @@
     color: gs.$pink;
     transition: 0.5s;
     cursor: pointer;
-
-    &:hover{
+    
+    &:hover {
         background: gs.$pink;
         color: gs.$white;
         transform: scale(1.05);
+    }
+    
+    @include gs.breakpoint(tablet-start, tablet-end) {
+        width: 6.8rem;
+        height: 2.9rem;
+        font-size: 1rem;
+    }
+    
+    @include gs.breakpoint(mobile-start, mobile-end) {
+        width: 6rem;
+        height: 2.7rem;
+        font-size: 0.85rem;
+        border: 2px solid gs.$pink;
+        
     }
 }

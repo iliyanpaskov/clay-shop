@@ -4,5 +4,13 @@
     color: gs.$text-color;
     font-size: 1rem;
     font-weight: 600;
-    margin:0.3rem 0 0.53rem;
+    margin: 0.3rem 0 0.53rem;
+
+    @include gs.breakpoint(tablet-start, tablet-end) {
+        font-weight: 400;
+    }
+
+    @include gs.breakpoint(mobile-start, mobile-end) {
+        font-weight: 400;
+    }
 }

@@ -12,9 +12,27 @@
     &>p:nth-of-type(1) {
         font-size: 1.5rem;
         margin-right: 1rem;
+
+        @include gs.breakpoint(tablet-start, tablet-end) {
+            margin-right: 0.3rem;
+            font-size: 1.2rem;
+        }
+
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            margin-right: 0.1rem;
+            font-size: 1.1rem;
+        }
     }
 
     &>p:nth-of-type(2) {
         font-size: 2.125rem;
+
+        @include gs.breakpoint(tablet-start, tablet-end) {
+            font-size: 1.8rem;
+        }
+
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            font-size: 1.65rem;
+        }
     }
 }

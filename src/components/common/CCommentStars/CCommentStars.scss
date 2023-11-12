@@ -8,5 +8,15 @@
         margin-right: 0.7rem;
         font-size: 1.5rem;
         color: gs.$pink;
+
+        @include gs.breakpoint(tablet-start, tablet-end) {
+            font-size: 1.2rem;
+            margin: 0.3rem;
+        }
+        
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            font-size: 1.1rem;
+            margin: 0.15rem;
+        }
     }
 }
