@@ -4,7 +4,6 @@ import { Footer } from './components/Footer/Footer';
 import { CommentsProvider } from './context/CommentsContext';
 import { CartProvider } from './context/CartContext';
 import { TotalPriceProvider } from './context/TotalPriceContext';
-import './App.css';
 
 function App() {
 

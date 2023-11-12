@@ -51,7 +51,6 @@ export const Cart = () => {
                             </>
                             : <CEmptyCartMessage />
                     }
-
                 </article>
 
                 <CTotalOrderPrice/>

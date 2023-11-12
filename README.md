@@ -34,6 +34,6 @@ There are two buttons "To shop" (leading back to the product page) and "Continue
 Back4app
 
 ### Front-End
-Deployed in Netlify You can visit it [here](https://greet-project.netlify.app/).
+Deployed in Netlify You can visit it [here](https://clayshop.netlify.app/).
 
 ### Responsive Web Design
