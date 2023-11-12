@@ -2,12 +2,25 @@
 
 .cart {
     min-height: 18.7rem;
-
     width: 71.25rem;
     background: gs.$white;
     border-radius: 1rem;
     transition: 0.7s;
     animation: showCart 0.7s forwards;
+
+    @include gs.breakpoint(display-start, display-end) {
+        width: 90%;
+    }
+
+    @include gs.breakpoint(tablet-start, tablet-end) {
+        width: 95%;
+        @include gs.flex(column, center, center);
+    }
+
+    @include gs.breakpoint(mobile-start, mobile-end) {
+        width: 98%;
+        @include gs.flex(column, center, center);
+    }
 
     &__wrapper {
         position: absolute;
@@ -42,6 +55,21 @@
                     font-weight: 600;
                     transition: 0.5s;
 
+                    @include gs.breakpoint(display-start, display-end) {
+                        font-size: 1.1rem;
+                        font-weight: 400;
+                    }
+
+                    @include gs.breakpoint(tablet-start, tablet-end) {
+                        font-size: 1rem;
+                        font-weight: 400;
+                    }
+
+                    @include gs.breakpoint(mobile-start, mobile-end) {
+                        font-size: 1rem;
+                        font-weight: 400;
+                    }
+
                     &:hover {
                         color: gs.$text-color;
                         border-bottom: 1px solid gs.$pink;
@@ -54,6 +82,14 @@
     &__cards {
         height: 22rem;
         overflow: auto;
+
+        @include gs.breakpoint(tablet-start, tablet-end) {
+            @include gs.grid(2, 1rem, center);
+        }
+        
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            @include gs.grid(1, 1rem, center);
+        }
     }
 
     &__buttons__wrapper {
@@ -70,11 +106,12 @@
 }
 
 @keyframes showCart {
-    0%{
+    0% {
         opacity: 0.4;
         transform: scale(0.7);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: scale(1);
     }

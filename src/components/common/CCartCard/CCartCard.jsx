@@ -52,9 +52,9 @@ export const CCartCard = ({
                     <img src={item.images[0]} alt="" />
                 </div>
                 <div className='cart__card__item__props'>
-                    <h2>{item.model}</h2>
-                    <p>Size <span>{item.size}</span></p>
-                    <div>
+                    <h2 className='one'>{item.model}</h2>
+                    <p className='two'>Size <span>{item.size}</span></p>
+                    <div className='three'>
                         <p>Color</p>
                         <CColorRadio color={item.colors} />
                     </div>

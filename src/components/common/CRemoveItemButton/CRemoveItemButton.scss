@@ -1,6 +1,19 @@
 @use '../../../globalStyles/' as gs;
 
 .remove__cart__item__button {
+
+    @include gs.breakpoint(tablet-start, tablet-end) {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    @include gs.breakpoint(mobile-start, mobile-end) {
+        position: absolute;
+        top: 1rem;
+        right: 1.2rem;
+    }
+
     &>input {
         display: none;
     }
