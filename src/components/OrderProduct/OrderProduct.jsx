@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from '../../context/CartContext';
 import { CColorRadio } from '../common/CColorRadio/CColorRadio';
 import { CSizeRadio } from '../common/CSizeRadio/CSizeRadio';
 import { CPrice } from '../common/CPrice/CPrice';
@@ -9,9 +10,11 @@ export const OrderProduct = ({
     product
 }) => {
 
-    const [size, setSize] = useState('');
-    const [color, setColor] = useState('');
+    const [size, setSize] = useState(product.size[0]);
+    const [color, setColor] = useState(product.colors[0]);
     const [price, setPrice] = useState(product.price);
+
+    const { addItem,showCart } = useContext(CartContext);
 
     const sizeHandler = (e) => {
         const [sizeOne, sizeTwo, sizeThree, ...rest] = product.size;
@@ -22,9 +25,9 @@ export const OrderProduct = ({
         } else if (e.currentTarget.value === sizeThree) {
             setPrice(product.price * 0.8);
         }
-
         setSize(e.currentTarget.value);
     }
+
     const colorHandler = (e) => {
         const [colorOne, colorTwo, colorThree, ...rest] = product.colors;
         if (e.currentTarget.value === colorOne) {
@@ -39,11 +42,22 @@ export const OrderProduct = ({
 
     const shopNowHandler = (e) => {
         e.preventDefault();
-        console.log(e.currentTarget);
+
+        console.log(size);
     }
     const addCartHandler = (e) => {
         e.preventDefault();
-        console.log(e.currentTarget);
+        const newItem = {
+            objectId:product.objectId,
+            images: product.images,
+            model: product.model,
+            size: size,
+            colors: color,
+            price: price
+        }
+        addItem(newItem);
+        showCart();
+
     }
     return (
         <section className='order__product'>

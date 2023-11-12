@@ -4,12 +4,12 @@
     position: relative;
     width: 100%;
     height: 11rem;
-    padding:1rem 2rem;
+    padding: 1rem 2rem;
     @include gs.flex(row, space-between, center);
     border-bottom: 1px solid gs.$option-after-color;
 
-    &__item__wrapper{
-        @include gs.flex(row,none,center);
+    &__item__wrapper {
+        @include gs.flex(row, none, center);
     }
 
     &__image {
@@ -44,7 +44,7 @@
                 margin-left: 0.5rem;
                 color: gs.$light-text-color;
             }
-            
+
         }
 
         &>div {
@@ -52,17 +52,6 @@
             @include gs.flex(row, space-between, center);
         }
     }
-    
-            &>svg{
-                color: gs.$second-light-text-color;
-                font-size: 1.3rem;
-                transition: 0.5s;
-                cursor: pointer;
 
-                &:hover{
-                    color: gs.$red;
-                    transform: scale(1.1);
-                }
-            }
-
+  
 }

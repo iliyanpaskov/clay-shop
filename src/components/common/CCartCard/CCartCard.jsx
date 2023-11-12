@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { CartContext } from '../../../context/CartContext';
 import { CColorRadio } from '../CColorRadio/CColorRadio';
 import { CCartItemCount } from '../CCartItemCount/CCartItemCount';
 import { CPrice } from '../CPrice/CPrice';
-import { FaXmark } from 'react-icons/fa6'
+import { CRemoveItemButton } from '../CRemoveItemButton/CRemoveItemButton';
 import './CCartCard.scss';
 
 export const CCartCard = ({
@@ -10,14 +11,18 @@ export const CCartCard = ({
 }) => {
 
     const [count, setCount] = useState(1);
-   
+    const { removeItem } = useContext(CartContext);
+
+    const removeItemHandler = (e) => {
+        removeItem(e.currentTarget.value);
+    }
+
     const increaseHandler = () => {
         if (count < 5) {
             setCount(count + 1);
         }
-        
     }
-    
+
     const decreaseHandler = () => {
         if (count > 1) {
             setCount(count - 1);
@@ -35,13 +40,13 @@ export const CCartCard = ({
                     <p>Size <span>{item.size}</span></p>
                     <div>
                         <p>Color</p>
-                        <CColorRadio color={item.colors[0]} />
+                        <CColorRadio color={item.colors} />
                     </div>
                 </div>
             </div>
             <CCartItemCount count={count} increase={increaseHandler} decrease={decreaseHandler} />
             <CPrice initialPrice={item.price * count} price={item.price * count} />
-            <FaXmark />
+            <CRemoveItemButton id={item.objectId} removeItemHandler={removeItemHandler} />
         </article>
     )
 }

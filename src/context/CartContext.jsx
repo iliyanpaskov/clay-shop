@@ -7,13 +7,15 @@ export const CartProvider = ({ children }) => {
     const [isCartShowen, setIsCartShowen] = useState(false);
     const [cartData, setCartData] = useState([
         {
+            objectId: '1',
             images: ["https://cdn.sportdepot.bg/files/products/33978-419_01.jpg",],
             model: "HELLY HANSEN 911 W HH",
-            size: ["S"],
-            colors: ["green"],
+            size: "S",
+            colors: "green",
             price: 84
         },
         {
+            objectId: '2',
             images: ["https://cdn.sportdepot.bg/files/products/3026128-002_01.jpg",],
             model: "UNDER ARMOUR Sonic X",
             size: ["37"],
@@ -26,8 +28,9 @@ export const CartProvider = ({ children }) => {
         setCartData([newItem, ...cartData]);
     }
 
-    const removeItem = () => {
-
+    const removeItem = (id) => {
+        const arr = cartData.filter((x) => x.objectId !== id);
+        setCartData([...arr]);
     }
 
     const showCart = () => {

@@ -6,6 +6,8 @@
     width: 71.25rem;
     background: gs.$white;
     border-radius: 1rem;
+    transition: 0.7s;
+    animation: showCart 0.7s forwards;
 
     &__wrapper {
         position: absolute;
@@ -28,7 +30,7 @@
             &>li {
                 width: 25%;
                 text-align: center;
-                
+
                 &>a {
                     display: inline-block;
                     width: 100%;
@@ -40,7 +42,7 @@
                     font-weight: 600;
                     transition: 0.5s;
 
-                    &:hover{
+                    &:hover {
                         color: gs.$text-color;
                         border-bottom: 1px solid gs.$pink;
                     }
@@ -49,9 +51,43 @@
         }
     }
 
+    &__cards {
+        height: 22rem;
+        overflow: auto;
+    }
+
+    &__total__price {
+        width: 100%;
+        height: 3.75rem;
+        @include gs.flex(row, none, flex-end);
+        background: gs.$gray-background-color;
+
+        &>h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+    }
+
+    &__buttons__wrapper {
+        width: 100%;
+        padding: 1rem 2.2rem;
+        @include gs.flex(row, space-between, center);
+    }
+
 }
 
 .link__active {
     color: gs.$text-color !important;
     border-bottom: 1px solid gs.$pink !important;
+}
+
+@keyframes showCart {
+    0%{
+        opacity: 0.4;
+        transform: scale(0.7);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
 }

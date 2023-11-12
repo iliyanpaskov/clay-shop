@@ -5,7 +5,7 @@ import './Header.scss';
 
 export const Header = () => {
 
-    const {cartData} = useContext(CartContext);
+    const {cartData,showCart} = useContext(CartContext);
 
     return (
         <header className='header'>
@@ -24,7 +24,7 @@ export const Header = () => {
                         <img src="/icons/search.svg" alt="facebook" />
                     </div>
                     <div>
-                        <img src="/icons/cart.svg" alt="facebook" />
+                        <img src="/icons/cart.svg" alt="facebook" onClick={showCart}/>
                         <p className='header__top__icons__cart__count'>{cartData.length}</p>
                     </div>
                 </article>
