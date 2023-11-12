@@ -2,7 +2,7 @@
 
 .header {
     width: 100%;
-    min-width: 85.375rem;
+    // min-width: 85.375rem;
     height: 11.25rem;
     margin-inline: auto;
     @include gs.flex(column, center, center);
